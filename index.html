@@ -6,9 +6,7 @@
 <title>PSC XI Application Checklist - Region VII Philippine Startup Challenge XI</title>
 <meta name="description" content="A submission checklist for the Region VII Philippine Startup Challenge XI application requirements.">
 <style>
-  /* ==========================================================
-     TOKENS
-  ========================================================== */
+
   :root {
     --bg: #F5F6F7;
     --surface: #FFFFFF;
@@ -41,9 +39,6 @@
     --transition-base: 220ms ease;
   }
 
-  /* ==========================================================
-     RESET & BASE
-  ========================================================== */
   *, *::before, *::after { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body {
@@ -105,9 +100,6 @@
     padding: 0 1.25rem;
   }
 
-  /* ==========================================================
-     HEADER
-  ========================================================== */
   .site-header {
     background: var(--surface);
     color: var(--text);
@@ -140,9 +132,6 @@
     margin-bottom: 0;
   }
 
-  /* ==========================================================
-     MAIN LAYOUT
-  ========================================================== */
   main { display: block; padding: 2rem 0 1.75rem; }
   section + section { margin-top: 2rem; }
 
@@ -151,9 +140,6 @@
     margin-bottom: 0.9rem;
   }
 
-  /* ==========================================================
-     INFO PANELS (reminder + final review)
-  ========================================================== */
   .panel {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -167,9 +153,6 @@
   .panel ul { padding-left: 1.15rem; }
   .panel li { color: var(--text); }
 
-  /* ==========================================================
-     PROGRESS
-  ========================================================== */
   .progress-section {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -261,9 +244,6 @@
     font-weight: 600;
   }
 
-  /* ==========================================================
-     CHECKLIST CARDS
-  ========================================================== */
   .checklist-list {
     display: flex;
     flex-direction: column;
@@ -437,7 +417,6 @@
   .concept-note-link:hover { background: var(--green); }
   .concept-note-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
 
-  /* deck sub-checklist */
   .deck-subchecklist {
     margin: 0.5rem 0 1rem;
     padding: 0;
@@ -500,9 +479,6 @@
     color: var(--text-muted);
   }
 
-  /* ==========================================================
-     FOOTER
-  ========================================================== */
   .site-footer {
     border-top: 1px solid var(--border);
     padding: 1.75rem 0 2.5rem;
@@ -511,9 +487,6 @@
   }
   .site-footer p { margin: 0 0 0.35rem; }
 
-  /* ==========================================================
-     RESPONSIVE
-  ========================================================== */
   @media (max-width: 560px) {
     .card { padding: 1.1rem 1.1rem; }
     .site-header { padding: 1.1rem 0; }
@@ -521,9 +494,6 @@
     .progress-header { flex-direction: column; align-items: flex-start; }
   }
 
-  /* ==========================================================
-     REDUCED MOTION
-  ========================================================== */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       transition-duration: 0.001ms !important;
@@ -531,9 +501,6 @@
     }
   }
 
-  /* ==========================================================
-     PRINT
-  ========================================================== */
   @media print {
     body { background: #fff; }
     .skip-link { display: none !important; }
@@ -606,7 +573,6 @@
     <h2 id="checklist-heading">Application requirements</h2>
     <div class="checklist-list">
 
-      <!-- 1. School IDs -->
       <article class="card" id="card-schoolIds">
         <div class="card-top">
           <div class="card-heading">
@@ -645,7 +611,6 @@
         </details>
       </article>
 
-      <!-- 2. School Logo -->
       <article class="card" id="card-schoolLogo">
         <div class="card-top">
           <div class="card-heading">
@@ -687,7 +652,6 @@
         </details>
       </article>
 
-      <!-- 3. Startup Logo -->
       <article class="card" id="card-startupLogo">
         <div class="card-top">
           <div class="card-heading">
@@ -725,7 +689,6 @@
         </details>
       </article>
 
-      <!-- 4. Concept Note -->
       <article class="card" id="card-conceptNote">
         <div class="card-top">
           <div class="card-heading">
@@ -769,7 +732,6 @@
         </details>
       </article>
 
-      <!-- 5. Presentation Deck -->
       <article class="card" id="card-presentationDeck">
         <div class="card-top">
           <div class="card-heading">
@@ -894,9 +856,6 @@
 (function () {
   "use strict";
 
-  // ============================================================
-  // STORAGE
-  // ============================================================
   var STORAGE_KEY = "pscxi-checklist-state-v1";
 
   var MAIN_ITEM_IDS = ["schoolIds", "schoolLogo", "startupLogo", "conceptNote", "presentationDeck"];
@@ -949,14 +908,8 @@
     }
   }
 
-  // ============================================================
-  // STATE
-  // ============================================================
   var state = getDefaultState();
 
-  // ============================================================
-  // DOM REFERENCES
-  // ============================================================
   var mainCheckboxes = Array.prototype.slice.call(document.querySelectorAll(".card-checkbox[data-item]"));
   var deckCheckboxes = Array.prototype.slice.call(document.querySelectorAll(".subitem-checkbox[data-deck-item]"));
   var copyButtons = Array.prototype.slice.call(document.querySelectorAll(".copy-btn"));
@@ -968,9 +921,6 @@
   var deckProgressText = document.getElementById("deck-progress-text");
   var resetButton = document.getElementById("reset-button");
 
-  // ============================================================
-  // RENDERING
-  // ============================================================
   function applyStateToDom() {
     mainCheckboxes.forEach(function (cb) {
       var item = cb.getAttribute("data-item");
@@ -1016,9 +966,6 @@
     deckProgressText.textContent = completed + " of " + total + " sections reviewed";
   }
 
-  // ============================================================
-  // EVENT HANDLERS
-  // ============================================================
   function handleMainChange(event) {
     var checkbox = event.target;
     var item = checkbox.getAttribute("data-item");
@@ -1039,7 +986,6 @@
     state.deck[item] = checkbox.checked;
     saveState(state);
     updateDeckProgress();
-    // Intentionally does not touch state.main.presentationDeck.
   }
 
   function handleReset() {
@@ -1099,9 +1045,6 @@
     copyTextToClipboard(text).then(function () { showCopyFeedback(btn); });
   }
 
-  // ============================================================
-  // INIT
-  // ============================================================
   function init() {
     state = loadState();
     applyStateToDom();
