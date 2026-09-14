@@ -1,0 +1,1123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSC XI Application Checklist - Region VII Philippine Startup Challenge XI</title>
+<meta name="description" content="A submission checklist for the Region VII Philippine Startup Challenge XI application requirements.">
+<style>
+  /* ==========================================================
+     TOKENS
+  ========================================================== */
+  :root {
+    --bg: #F5F6F7;
+    --surface: #FFFFFF;
+    --navy: #1A1A1A;
+    --navy-soft: #4A4F57;
+    --navy-tint: #F0F1F3;
+    --green-deep: #235E35;
+    --green: #2D7D46;
+    --green-text: #235E35;
+    --green-tint: #EAF4EE;
+    --warn: #F5A623;
+    --warn-tint: #FFF8E1;
+    --border: #E2E4E8;
+    --border-strong: #C4C7CD;
+    --text: #1A1A1A;
+    --text-muted: #666666;
+
+    --radius-lg: 10px;
+    --radius-md: 8px;
+    --radius-sm: 5px;
+
+    --shadow-sm: none;
+    --shadow-md: none;
+
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+
+    --max-width: 700px;
+    --transition-fast: 120ms ease;
+    --transition-base: 220ms ease;
+  }
+
+  /* ==========================================================
+     RESET & BASE
+  ========================================================== */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--font-sans); font-weight: 600; color: var(--navy); margin: 0 0 0.5rem; line-height: 1.25; }
+  p { margin: 0 0 0.75rem; }
+  ul { margin: 0; padding-left: 1.25rem; }
+  li { margin-bottom: 0.4rem; }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--navy-tint);
+    padding: 0.15em 0.45em;
+    border-radius: 4px;
+    word-break: break-word;
+  }
+  a { color: var(--green-deep); }
+  button { font-family: inherit; }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -3rem;
+    background: var(--navy);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-sm);
+    z-index: 100;
+    transition: top var(--transition-fast);
+    text-decoration: none;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  :focus-visible {
+    outline: 3px solid var(--green);
+    outline-offset: 2px;
+  }
+
+  .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  /* ==========================================================
+     HEADER
+  ========================================================== */
+  .site-header {
+    background: var(--surface);
+    color: var(--text);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-cover {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .site-header h1 {
+    color: var(--text);
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+  }
+  .header-subtitle {
+    font-family: var(--font-sans);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+  .header-instruction {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    max-width: none;
+    margin-top: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  /* ==========================================================
+     MAIN LAYOUT
+  ========================================================== */
+  main { display: block; padding: 2rem 0 1.75rem; }
+  section + section { margin-top: 2rem; }
+
+  section > h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.9rem;
+  }
+
+  /* ==========================================================
+     INFO PANELS (reminder + final review)
+  ========================================================== */
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.1rem 1.3rem;
+  }
+  .panel.panel--final {
+    background: var(--green-tint);
+    border-color: var(--green);
+  }
+  .panel ul { padding-left: 1.15rem; }
+  .panel li { color: var(--text); }
+
+  /* ==========================================================
+     PROGRESS
+  ========================================================== */
+  .progress-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.3rem 1.4rem;
+  }
+  .progress-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.7rem;
+  }
+  .progress-header h2 { margin-bottom: 0; }
+  .progress-count {
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  .progress-bar-track {
+    width: 100%;
+    height: 7px;
+    background: var(--navy-tint);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--green);
+    border-radius: 999px;
+    transition: width var(--transition-base);
+  }
+
+  .progress-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 1.1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.6rem 1.05rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+  }
+  .btn:active { transform: translateY(1px); }
+
+  .btn--ghost {
+    background: transparent;
+    color: var(--text-muted);
+    border-color: var(--border-strong);
+  }
+  .btn--ghost:hover { background: var(--navy-tint); border-color: var(--navy-soft); color: #C0392B; }
+
+  .btn--solid {
+    background: var(--green);
+    color: #fff;
+  }
+  .btn--solid:hover { background: var(--green-deep); }
+
+  .completion-message {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    border-radius: var(--radius-md);
+    transition: max-height var(--transition-base), opacity var(--transition-base), margin var(--transition-base);
+  }
+  .completion-message.is-visible {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 1.1rem;
+    background: var(--green-tint);
+    border: 1px solid var(--green);
+    padding: 0.9rem 1.1rem;
+    color: var(--green-text);
+    font-weight: 600;
+  }
+
+  /* ==========================================================
+     CHECKLIST CARDS
+  ========================================================== */
+  .checklist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-top: 1.1rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.3rem 1.4rem;
+    transition: background-color var(--transition-base), border-color var(--transition-base);
+  }
+  .card.is-complete {
+    border-color: var(--green);
+    background: var(--green-tint);
+  }
+
+  .card-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .check-control {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .card-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    border: 2px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  }
+  .card-checkbox:checked {
+    background: var(--green);
+    border-color: var(--green);
+  }
+  .card-checkbox:checked::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    width: 6px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  .check-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .card-heading {
+    display: flex;
+    align-items: center;
+  }
+  .card-title { font-size: 1.25rem; margin: 0; }
+
+  .card-summary {
+    margin-top: 0.9rem;
+    color: var(--text);
+  }
+
+  .filename-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem 0.9rem;
+    margin-top: 0.5rem;
+  }
+  .filename-block {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .filename-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  .filename-value { color: var(--navy); }
+
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    color: var(--navy-soft);
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  }
+  .copy-btn:hover { background: var(--navy-tint); }
+  .copy-btn.is-copied { border-color: var(--green); color: var(--green-text); }
+  .copy-icon { width: 14px; height: 14px; fill: currentColor; }
+
+  .card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+  .meta-item {
+    font-size: 0.82rem;
+    color: var(--navy-soft);
+    background: var(--navy-tint);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+  }
+
+  .card-details {
+    margin-top: 1rem;
+    border-top: 1px dashed var(--border);
+    padding-top: 0.9rem;
+  }
+  .card-details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--green-deep);
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .card-details summary::-webkit-details-marker { display: none; }
+  .card-details summary::before {
+    content: "\25B8";
+    display: inline-block;
+    transition: transform var(--transition-fast);
+    font-size: 0.8rem;
+  }
+  .card-details[open] summary::before { transform: rotate(90deg); }
+  .card-details .details-body { margin-top: 0.8rem; padding-left: 1.2rem; }
+  .card-details .details-body p:first-child { margin-top: 0; }
+
+  .concept-note-link {
+    margin-top: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--green-deep);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.65rem 1.1rem;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+  }
+  .concept-note-link:hover { background: var(--green); }
+  .concept-note-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+  /* deck sub-checklist */
+  .deck-subchecklist {
+    margin: 0.5rem 0 1rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .subitem { margin: 0; }
+  .subitem-control {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+  }
+  .subitem-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  }
+  .subitem-checkbox:checked { background: var(--green); border-color: var(--green); }
+  .subitem-checkbox:checked::after {
+    content: "";
+    position: absolute;
+    left: 6px; top: 2px;
+    width: 5px; height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .deck-progress {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0 0 0.5rem;
+  }
+
+  .restrictions {
+    background: var(--navy-tint);
+    border-radius: var(--radius-md);
+    padding: 0.9rem 1.1rem;
+    margin-top: 0.5rem;
+  }
+  .restrictions-label {
+    font-weight: 600;
+    color: var(--navy-soft);
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+  .restrictions-note {
+    margin: 0.6rem 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  /* ==========================================================
+     FOOTER
+  ========================================================== */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 1.75rem 0 2.5rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  .site-footer p { margin: 0 0 0.35rem; }
+
+  /* ==========================================================
+     RESPONSIVE
+  ========================================================== */
+  @media (max-width: 560px) {
+    .card { padding: 1.1rem 1.1rem; }
+    .site-header { padding: 1.1rem 0; }
+    .check-text { display: none; }
+    .progress-header { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ==========================================================
+     REDUCED MOTION
+  ========================================================== */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition-duration: 0.001ms !important;
+      animation-duration: 0.001ms !important;
+    }
+  }
+
+  /* ==========================================================
+     PRINT
+  ========================================================== */
+  @media print {
+    body { background: #fff; }
+    .skip-link { display: none !important; }
+    .site-header { background: #fff !important; color: #000 !important; border-bottom: 2px solid #000; }
+    .header-subtitle, .header-instruction { color: #333 !important; }
+    .progress-bar-track, .btn, .copy-btn { display: none !important; }
+    .card, .panel {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      box-shadow: none;
+      border: 1px solid #999;
+    }
+    .card.is-complete { background: #fff; }
+    .card-details:not([open]) > .details-body,
+    .card-details:not([open]) summary ~ * {
+      display: block !important;
+    }
+    details:not([open]) > *:not(summary) {
+      display: block !important;
+    }
+    .card-details summary::before { display: none; }
+    .concept-note-link { background: none !important; color: #000 !important; padding: 0; }
+    .concept-note-link::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+    a { color: #000; text-decoration: underline; }
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to checklist</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <img class="header-cover" src="cover.png" alt="University of San Jose-Recoletos, School of Computer Studies - Philippine Startup Challenge 11, 2026, Region 7">
+    <h1 class="visually-hidden">PSC XI Application Checklist</h1>
+    <p class="header-subtitle visually-hidden">Region VII Philippine Startup Challenge XI</p>
+    <p class="header-instruction">Check each item after your team has completed and verified the requirement. Your checklist progress will be saved automatically on this device.</p>
+  </div>
+</header>
+
+<main id="main-content" class="wrap">
+
+  <section class="reminder-section" aria-labelledby="reminder-heading">
+    <h2 id="reminder-heading"></h2>
+    <div class="panel">
+      <ul>
+        <li>Submit only one complete set of requirements <b>per team</b>.</li>
+        <li>Each team consists of three student members and one mentor.</li>
+        <li>All files must be complete, readable, and properly named before submission.</li>
+        <li>Use the same team name consistently in all filenames.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="progress-section" aria-labelledby="progress-heading">
+    <div class="progress-header">
+      <h2 id="progress-heading">Progress summary</h2>
+      <p class="progress-count" id="progress-count-text" aria-live="polite">0 of 5 completed</p>
+    </div>
+    <div class="progress-bar-track" id="progress-bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" aria-label="Deliverables completed">
+      <div class="progress-bar-fill" id="progress-bar-fill"></div>
+    </div>
+    <div class="progress-footer">
+      <p style="margin:0; color: var(--text-muted); font-size:0.88rem;">Saved automatically in this browser only.</p>
+      <button type="button" class="btn btn--ghost" id="reset-button">Reset checklist</button>
+    </div>
+    <div class="completion-message" id="completion-message" aria-live="polite"></div>
+  </section>
+
+  <section class="checklist-section" aria-labelledby="checklist-heading">
+    <h2 id="checklist-heading">Application requirements</h2>
+    <div class="checklist-list">
+
+      <!-- 1. School IDs -->
+      <article class="card" id="card-schoolIds">
+        <div class="card-top">
+          <div class="card-heading">
+            <h3 class="card-title">School IDs</h3>
+          </div>
+          <label class="check-control" for="check-schoolIds">
+            <input type="checkbox" id="check-schoolIds" class="card-checkbox" data-item="schoolIds" aria-describedby="summary-schoolIds">
+            <span class="check-text">Mark as complete</span>
+          </label>
+        </div>
+        <p class="card-summary" id="summary-schoolIds">Combine the school IDs of all three student members and one mentor into a single file.</p>
+        <div class="filename-row">
+          <div class="filename-block">
+            <span class="filename-label">Filename</span>
+            <code id="filename-schoolIds" class="filename-value">TeamName_SchoolIDs_PSC11.pdf</code>
+          </div>
+          <button type="button" class="copy-btn" data-copy-target="filename-schoolIds" aria-label="Copy filename for School IDs">
+            <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>
+            <span class="copy-btn-text">Copy</span>
+          </button>
+        </div>
+        <div class="card-meta">
+          <span class="meta-item">PDF</span>
+          <span class="meta-item">Up to 100 MB</span>
+        </div>
+        <details class="card-details">
+          <summary>View details</summary>
+          <div class="details-body">
+            <ul>
+              <li>Include the <b>School IDs</b> of exactly three student members.</li>
+              <li>Include the <b>School ID</b> of one mentor.</li>
+              <li><b>Combine all four IDs into one readable PDF.</b></li>
+              <li>Confirm that names, photographs, and other necessary ID details are visible.</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+      <!-- 2. School Logo -->
+      <article class="card" id="card-schoolLogo">
+        <div class="card-top">
+          <div class="card-heading">
+            <h3 class="card-title">School Logo</h3>
+          </div>
+          <label class="check-control" for="check-schoolLogo">
+            <input type="checkbox" id="check-schoolLogo" class="card-checkbox" data-item="schoolLogo" aria-describedby="summary-schoolLogo">
+            <span class="check-text">Mark as complete</span>
+          </label>
+        </div>
+        <p class="card-summary" id="summary-schoolLogo">Prepare a high-resolution copy of the school's official logo.</p>
+        <div class="filename-row">
+          <div class="filename-block">
+            <span class="filename-label">Filename</span>
+            <code id="filename-schoolLogo" class="filename-value">TeamName_SchoolName_Logo_PSC11.png</code>
+          </div>
+          <button type="button" class="copy-btn" data-copy-target="filename-schoolLogo" aria-label="Copy filename for School Logo">
+            <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>
+            <span class="copy-btn-text">Copy</span>
+          </button>
+        </div>
+        <div class="card-meta">
+          <span class="meta-item">PNG</span>
+          <span class="meta-item">Up to 100 MB</span>
+        </div>
+        <details class="card-details">
+          <summary>View details</summary>
+          <div class="details-body">
+            <ul>
+              <li>Use the <b>official logo</b> provided or approved by the school.</li>
+              <li>The image must be clear and high-resolution.</li>
+              <li>Do not use a screenshot or a visibly pixelated copy.</li>
+            </ul>
+            <a href="USJR_School_Logo.png" class="concept-note-link" download="TeamName_SchoolName_Logo_PSC11.png">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+              Download School Logo (USJR)
+            </a>
+          </div>
+        </details>
+      </article>
+
+      <!-- 3. Startup Logo -->
+      <article class="card" id="card-startupLogo">
+        <div class="card-top">
+          <div class="card-heading">
+            <h3 class="card-title">Startup Logo</h3>
+          </div>
+          <label class="check-control" for="check-startupLogo">
+            <input type="checkbox" id="check-startupLogo" class="card-checkbox" data-item="startupLogo" aria-describedby="summary-startupLogo">
+            <span class="check-text">Mark as complete</span>
+          </label>
+        </div>
+        <p class="card-summary" id="summary-startupLogo">Prepare a high-resolution copy of the startup's official logo.</p>
+        <div class="filename-row">
+          <div class="filename-block">
+            <span class="filename-label">Filename</span>
+            <code id="filename-startupLogo" class="filename-value">TeamName_StartupLogo_PSC11.png</code>
+          </div>
+          <button type="button" class="copy-btn" data-copy-target="filename-startupLogo" aria-label="Copy filename for Startup Logo">
+            <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>
+            <span class="copy-btn-text">Copy</span>
+          </button>
+        </div>
+        <div class="card-meta">
+          <span class="meta-item">PNG</span>
+          <span class="meta-item">Up to 10 MB</span>
+        </div>
+        <details class="card-details">
+          <summary>View details</summary>
+          <div class="details-body">
+            <ul>
+              <li>Use the team's <b>final</b> or approved startup logo.</li>
+              <li>The image must be clear and high-resolution.</li>
+              <li>Confirm that the startup name and branding are correct.</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+      <!-- 4. Concept Note -->
+      <article class="card" id="card-conceptNote">
+        <div class="card-top">
+          <div class="card-heading">
+            <h3 class="card-title">Concept Note</h3>
+          </div>
+          <label class="check-control" for="check-conceptNote">
+            <input type="checkbox" id="check-conceptNote" class="card-checkbox" data-item="conceptNote" aria-describedby="summary-conceptNote">
+            <span class="check-text">Mark as complete</span>
+          </label>
+        </div>
+        <p class="card-summary" id="summary-conceptNote">Complete the official PSC XI Concept Note Template.</p>
+        <div class="filename-row">
+          <div class="filename-block">
+            <span class="filename-label">Filename</span>
+            <code id="filename-conceptNote" class="filename-value">TeamName_ConceptNote_PSC11.pdf</code>
+          </div>
+          <button type="button" class="copy-btn" data-copy-target="filename-conceptNote" aria-label="Copy filename for Concept Note">
+            <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>
+            <span class="copy-btn-text">Copy</span>
+          </button>
+        </div>
+        <div class="card-meta">
+          <span class="meta-item">PDF or document</span>
+          <span class="meta-item">Up to 10 MB</span>
+        </div>
+        <details class="card-details">
+          <summary>View details</summary>
+          <div class="details-body">
+            <a href="ConceptNote_PSCXI_Template.docx" id="concept-note-link" class="concept-note-link" download="TeamName_ConceptNote_PSCXI_Template.docx">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+              Download Concept Note Template
+            </a>
+            <ul>
+              <li><b>Download</b> or open the official Concept Note Template.</li>
+              <li>Complete every required section.</li>
+              <li>Review the content for correctness and completeness.</li>
+              <li><b><u>Have your capstone/thesis adviser review your concept note.</u></b></li>
+              <li>Export the completed document as a <b>PDF</b> before submission.</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+      <!-- 5. Presentation Deck -->
+      <article class="card" id="card-presentationDeck">
+        <div class="card-top">
+          <div class="card-heading">
+            <h3 class="card-title">Presentation Deck</h3>
+          </div>
+          <label class="check-control" for="check-presentationDeck">
+            <input type="checkbox" id="check-presentationDeck" class="card-checkbox" data-item="presentationDeck" aria-describedby="summary-presentationDeck">
+            <span class="check-text">Mark as complete</span>
+          </label>
+        </div>
+        <p class="card-summary" id="summary-presentationDeck">Prepare the team's initial presentation deck describing the startup idea.</p>
+        <div class="filename-row">
+          <div class="filename-block">
+            <span class="filename-label">Filename</span>
+            <code id="filename-presentationDeck" class="filename-value">TeamName_PresentationDeck_PSC11.pdf</code>
+          </div>
+          <button type="button" class="copy-btn" data-copy-target="filename-presentationDeck" aria-label="Copy filename for Presentation Deck">
+            <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>
+            <span class="copy-btn-text">Copy</span>
+          </button>
+        </div>
+        <div class="card-meta">
+          <span class="meta-item">PDF</span>
+          <span class="meta-item">Up to 100 MB</span>
+          <span class="meta-item"><b>Fewer than 30 slides</b></span>
+        </div>
+        <details class="card-details">
+          <summary>View details</summary>
+          <div class="details-body">
+            <p>Check off each required section as your team finishes reviewing it. This sub-checklist is saved on its own and does not mark the deliverable above as complete; do that once the whole deck has been reviewed.</p>
+            <p class="deck-progress" id="deck-progress-text">0 of 8 sections reviewed</p>
+            <ul class="deck-subchecklist">
+              <li class="subitem">
+                <label class="subitem-control" for="deck-problem">
+                  <input type="checkbox" id="deck-problem" class="subitem-checkbox" data-deck-item="problem">
+                  <span>Problem description</span>
+                </label>
+              </li>
+              <li class="subitem">
+                <label class="subitem-control" for="deck-sdg">
+                  <input type="checkbox" id="deck-sdg" class="subitem-checkbox" data-deck-item="sdg">
+                  <span>Sustainable Development Goal (SDG) priority</span>
+                </label>
+              </li>
+              <li class="subitem">
+                <label class="subitem-control" for="deck-market">
+                  <input type="checkbox" id="deck-market" class="subitem-checkbox" data-deck-item="market">
+                  <span>Target market segment</span>
+                </label>
+              </li>
+              <li class="subitem">
+                <label class="subitem-control" for="deck-model">
+                  <input type="checkbox" id="deck-model" class="subitem-checkbox" data-deck-item="model">
+                  <span>Business model</span>
+                </label>
+              </li>
+              <li class="subitem">
+                <label class="subitem-control" for="deck-solution">
+                  <input type="checkbox" id="deck-solution" class="subitem-checkbox" data-deck-item="solution">
+                  <span>Proposed solution</span>
+                </label>
+              </li>
+              <li class="subitem">
+                <label class="subitem-control" for="deck-features">
+                  <input type="checkbox" id="deck-features" class="subitem-checkbox" data-deck-item="features">
+                  <span>Features</span>
+                </label>
+              </li>
+              <li class="subitem">
+                <label class="subitem-control" for="deck-funds">
+                  <input type="checkbox" id="deck-funds" class="subitem-checkbox" data-deck-item="funds">
+                  <span>Proposed use of funds or requests from investors</span>
+                </label>
+              </li>
+              <li class="subitem">
+                <label class="subitem-control" for="deck-traction">
+                  <input type="checkbox" id="deck-traction" class="subitem-checkbox" data-deck-item="traction">
+                  <span>Progress or traction</span>
+                </label>
+              </li>
+            </ul>
+            <div class="restrictions">
+              <p class="restrictions-label">Restrictions</p>
+              <ul>
+                <li><b>Create the deck</b> in a slide tool (e.g., PowerPoint, Google Slides, Canva), then <b>export or convert it to PDF</b> before submission.</li>
+                <li>Do not include presentation animations.</li>
+                <li>Do not include videos.</li>
+                <li>Do not include sounds.</li>
+              </ul>
+              <p class="restrictions-note">This is only the initial presentation deck and is not necessarily the final pitching deck. No specific presentation template is required.</p>
+            </div>
+          </div>
+        </details>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="final-review-section" aria-labelledby="final-review-heading">
+    <h2 id="final-review-heading">Final review before you submit</h2>
+    <div class="panel panel--final">
+      <ul>
+        <li>Verify that all five deliverables are complete.</li>
+        <li>Open every file and confirm that it is readable.</li>
+        <li>Check every filename for spelling and consistency.</li>
+        <li>Verify each file's format and size.</li>
+        <li>Confirm that only one set of requirements will be submitted for the team.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Region VII Philippine Startup Challenge XI - application checklist.</p>
+    <p>This page only stores checkbox progress in this browser. No files, names, or other personal information are collected or uploaded.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // ============================================================
+  // STORAGE
+  // ============================================================
+  var STORAGE_KEY = "pscxi-checklist-state-v1";
+
+  var MAIN_ITEM_IDS = ["schoolIds", "schoolLogo", "startupLogo", "conceptNote", "presentationDeck"];
+  var DECK_ITEM_IDS = ["problem", "sdg", "market", "model", "solution", "features", "funds", "traction"];
+
+  var COMPLETION_MESSAGE_TEXT = "All five deliverables are checked. Give everything one more look, then submit your team's set.";
+
+  function getDefaultState() {
+    var main = {};
+    var deck = {};
+    MAIN_ITEM_IDS.forEach(function (id) { main[id] = false; });
+    DECK_ITEM_IDS.forEach(function (id) { deck[id] = false; });
+    return { main: main, deck: deck };
+  }
+
+  function sanitizeState(raw) {
+    var safe = getDefaultState();
+    if (raw && typeof raw === "object") {
+      if (raw.main && typeof raw.main === "object") {
+        MAIN_ITEM_IDS.forEach(function (id) {
+          if (typeof raw.main[id] === "boolean") safe.main[id] = raw.main[id];
+        });
+      }
+      if (raw.deck && typeof raw.deck === "object") {
+        DECK_ITEM_IDS.forEach(function (id) {
+          if (typeof raw.deck[id] === "boolean") safe.deck[id] = raw.deck[id];
+        });
+      }
+    }
+    return safe;
+  }
+
+  function loadState() {
+    var raw = null;
+    try {
+      var stored = window.localStorage.getItem(STORAGE_KEY);
+      if (stored) raw = JSON.parse(stored);
+    } catch (err) {
+      console.warn("PSC XI checklist: saved progress could not be read, starting fresh.", err);
+      raw = null;
+    }
+    return sanitizeState(raw);
+  }
+
+  function saveState(state) {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (err) {
+      console.warn("PSC XI checklist: progress could not be saved in this browser.", err);
+    }
+  }
+
+  // ============================================================
+  // STATE
+  // ============================================================
+  var state = getDefaultState();
+
+  // ============================================================
+  // DOM REFERENCES
+  // ============================================================
+  var mainCheckboxes = Array.prototype.slice.call(document.querySelectorAll(".card-checkbox[data-item]"));
+  var deckCheckboxes = Array.prototype.slice.call(document.querySelectorAll(".subitem-checkbox[data-deck-item]"));
+  var copyButtons = Array.prototype.slice.call(document.querySelectorAll(".copy-btn"));
+
+  var progressCountText = document.getElementById("progress-count-text");
+  var progressBarFill = document.getElementById("progress-bar-fill");
+  var progressBarTrack = document.getElementById("progress-bar-track");
+  var completionMessage = document.getElementById("completion-message");
+  var deckProgressText = document.getElementById("deck-progress-text");
+  var resetButton = document.getElementById("reset-button");
+
+  // ============================================================
+  // RENDERING
+  // ============================================================
+  function applyStateToDom() {
+    mainCheckboxes.forEach(function (cb) {
+      var item = cb.getAttribute("data-item");
+      var checked = !!state.main[item];
+      cb.checked = checked;
+      var card = cb.closest(".card");
+      if (card) card.classList.toggle("is-complete", checked);
+    });
+
+    deckCheckboxes.forEach(function (cb) {
+      var item = cb.getAttribute("data-deck-item");
+      cb.checked = !!state.deck[item];
+    });
+
+    updateProgress();
+    updateDeckProgress();
+  }
+
+  function updateProgress() {
+    var total = MAIN_ITEM_IDS.length;
+    var completed = MAIN_ITEM_IDS.filter(function (id) { return state.main[id]; }).length;
+
+    progressCountText.textContent = completed + " of " + total + " completed";
+
+    var pct = total ? Math.round((completed / total) * 100) : 0;
+    progressBarFill.style.width = pct + "%";
+    progressBarTrack.setAttribute("aria-valuenow", String(completed));
+    progressBarTrack.setAttribute("aria-valuetext", completed + " of " + total + " completed");
+
+    if (completed === total) {
+      completionMessage.textContent = COMPLETION_MESSAGE_TEXT;
+      completionMessage.classList.add("is-visible");
+    } else {
+      completionMessage.classList.remove("is-visible");
+      completionMessage.textContent = "";
+    }
+  }
+
+  function updateDeckProgress() {
+    if (!deckProgressText) return;
+    var total = DECK_ITEM_IDS.length;
+    var completed = DECK_ITEM_IDS.filter(function (id) { return state.deck[id]; }).length;
+    deckProgressText.textContent = completed + " of " + total + " sections reviewed";
+  }
+
+  // ============================================================
+  // EVENT HANDLERS
+  // ============================================================
+  function handleMainChange(event) {
+    var checkbox = event.target;
+    var item = checkbox.getAttribute("data-item");
+    if (!(item in state.main)) return;
+    state.main[item] = checkbox.checked;
+    saveState(state);
+
+    var card = checkbox.closest(".card");
+    if (card) card.classList.toggle("is-complete", checkbox.checked);
+
+    updateProgress();
+  }
+
+  function handleDeckChange(event) {
+    var checkbox = event.target;
+    var item = checkbox.getAttribute("data-deck-item");
+    if (!(item in state.deck)) return;
+    state.deck[item] = checkbox.checked;
+    saveState(state);
+    updateDeckProgress();
+    // Intentionally does not touch state.main.presentationDeck.
+  }
+
+  function handleReset() {
+    var confirmed = window.confirm(
+      "Reset the checklist? This clears every checked item and saved section on this device. This cannot be undone."
+    );
+    if (!confirmed) return;
+    state = getDefaultState();
+    saveState(state);
+    applyStateToDom();
+  }
+
+  function legacyCopy(text) {
+    try {
+      var tempInput = document.createElement("textarea");
+      tempInput.value = text;
+      tempInput.setAttribute("readonly", "");
+      tempInput.style.position = "absolute";
+      tempInput.style.left = "-9999px";
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+    } catch (err) {
+      console.warn("PSC XI checklist: copy to clipboard failed.", err);
+    }
+  }
+
+  function copyTextToClipboard(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).catch(function () { legacyCopy(text); });
+    }
+    legacyCopy(text);
+    return Promise.resolve();
+  }
+
+  function showCopyFeedback(btn) {
+    var textEl = btn.querySelector(".copy-btn-text");
+    if (!textEl) return;
+    var original = textEl.getAttribute("data-original-text") || textEl.textContent;
+    textEl.setAttribute("data-original-text", original);
+    textEl.textContent = "Copied";
+    btn.classList.add("is-copied");
+    window.clearTimeout(btn._copyTimeout);
+    btn._copyTimeout = window.setTimeout(function () {
+      textEl.textContent = original;
+      btn.classList.remove("is-copied");
+    }, 1500);
+  }
+
+  function handleCopyClick(event) {
+    var btn = event.currentTarget;
+    var targetId = btn.getAttribute("data-copy-target");
+    var target = targetId ? document.getElementById(targetId) : null;
+    if (!target) return;
+    var text = target.textContent.trim();
+    copyTextToClipboard(text).then(function () { showCopyFeedback(btn); });
+  }
+
+  // ============================================================
+  // INIT
+  // ============================================================
+  function init() {
+    state = loadState();
+    applyStateToDom();
+
+    mainCheckboxes.forEach(function (cb) { cb.addEventListener("change", handleMainChange); });
+    deckCheckboxes.forEach(function (cb) { cb.addEventListener("change", handleDeckChange); });
+    copyButtons.forEach(function (btn) { btn.addEventListener("click", handleCopyClick); });
+    if (resetButton) resetButton.addEventListener("click", handleReset);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
